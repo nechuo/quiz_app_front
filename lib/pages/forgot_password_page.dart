@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import './home_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
+  // This widget is the forgot password page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
 
@@ -15,10 +16,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -48,38 +49,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: .center,
           children: [
             Container(
-              margin: const EdgeInsets.only(bottom: 0),
+              margin: const EdgeInsets.only(top: 50, bottom: 50),
               child: Text(
-                'Welcome to Quiz App',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                'Forgot your password?',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 10.0, bottom: 20.0),
-              child: Text(
-                'Sign In to continue',
-                style: TextStyle(fontSize: 19),
-              ),
-            ),
-
             Container(
               margin: const EdgeInsets.only(left: 40.0, right: 40.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Enter your username',
+                  hintText: 'Enter your Email',
                   border: OutlineInputBorder(),
-                  labelText: 'Username',
-                ),
-                onChanged: (text) {},
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 40.0, right: 40.0, top: 20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter your password',
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
+                  labelText: 'Email',
                 ),
                 onChanged: (text) {},
               ),
@@ -89,7 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 157, 110, 237),
                     foregroundColor: Colors.white,
@@ -102,53 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     padding: const EdgeInsets.only(top: 15, bottom: 15),
                   ),
-                  child: Text('Login'),
+                  child: Text('Send'),
                 ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 157, 110, 237),
-                        fontSize: 18,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    child: Text(
-                      'Don\'t have an account?',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  InkWell(
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 157, 110, 237),
-                        fontSize: 18,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
               ),
             ),
           ],
