@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import './sign_in_page.dart';
-import './home_page.dart';
 import './forgot_password_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -33,6 +35,24 @@ class _SignUpPageState extends State<SignUpPage> {
   String? _passwordErrorMessage;
   String? _confirmPasswordErrorMessage;
   String? _emailErrorMessage;
+
+  Future<String> _signUp(String username, String password) async {
+    http.Response response = await http.post(
+      Uri.parse("http://192.168.0.137:3001/sign-up"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"username": username, "password": password}),
+    );
+    switch (response.statusCode) {
+      case 201:
+        return "Ok";
+      case 401:
+        return "Informations manquantes";
+      case 409:
+        return "Un.e utilisateur.ice avec ce nom d'utilisateur existe deja.";
+      default:
+        return "Une erreur inconnue s'est produite.";
+    }
+  }
 
   String? _validateConfirmPassword() {
     String? message;
@@ -221,15 +241,34 @@ class _SignUpPageState extends State<SignUpPage> {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    _validateConfirmPassword();
-                    _validateEmail();
-                    _validatePassword();
+                  onPressed: () async {
+                    bool isValidConfirmPassword =
+                        _validateConfirmPassword() == null;
+                    bool isValidUsername = _validateEmail() == null;
+                    bool isValidPassword = _validatePassword() == null;
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    if (!isValidPassword ||
+                        !isValidUsername ||
+                        !isValidConfirmPassword) {
+                      return;
+                    }
+
+                    final navigator = Navigator.of(context);
+
+                    String message = await _signUp(
+                      _emailController.text,
+                      _passwordController.text,
                     );
+
+                    if (message == "Ok") {
+                      navigator.push(
+                        MaterialPageRoute(builder: (_) => SignInPage()),
+                      );
+                    } else {
+                      setState(() {
+                        _emailErrorMessage = message;
+                      });
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 157, 110, 237),

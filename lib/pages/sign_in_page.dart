@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import './sign_up_page.dart';
 import './home_page.dart';
 import './forgot_password_page.dart';
@@ -23,6 +26,69 @@ class _SignInPageState extends State<SignInPage> {
   bool _passwordVisible = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  String? _passwordErrorMessage;
+  String? _emailErrorMessage;
+
+  Future<String> _signIn(String username, String password) async {
+    http.Response response = await http.post(
+      Uri.parse("http://192.168.0.137:3001/login"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"username": username, "password": password}),
+    );
+    switch (response.statusCode) {
+      case 200:
+        return "Ok";
+      case 401:
+        return "Informations manquantes";
+      case 404:
+        return "Compte introuvable";
+      case 403:
+        return "Mot de passe incorect";
+      default:
+        return "Une erreur inconnue s'est produite.";
+    }
+  }
+
+  String? _validateEmail() {
+    String? message;
+    if (_emailController.text.isEmpty) {
+      message = 'Email cannot be empty';
+      setState(() {
+        _emailErrorMessage = message;
+      });
+    } else if (!_emailController.text.contains('@')) {
+      message = 'Invalid email format';
+      setState(() {
+        _emailErrorMessage = message;
+      });
+    } else {
+      setState(() {
+        _emailErrorMessage = null;
+      });
+    }
+    return message;
+  }
+
+  String? _validatePassword() {
+    String? message;
+    if (_passwordController.text.isEmpty) {
+      message = 'Password cannot be empty';
+      setState(() {
+        _passwordErrorMessage = message;
+      });
+    } else if (_passwordController.text.length < 6) {
+      message = 'Password must be at least 6 characters long';
+      setState(() {
+        _passwordErrorMessage = message;
+      });
+    } else {
+      setState(() {
+        _passwordErrorMessage = null;
+      });
+    }
+    return message;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +141,7 @@ class _SignInPageState extends State<SignInPage> {
                   hintText: 'Enter your Email',
                   border: OutlineInputBorder(),
                   labelText: 'Email',
+                  errorText: _emailErrorMessage,
                 ),
                 onChanged: (text) {},
               ),
@@ -88,6 +155,7 @@ class _SignInPageState extends State<SignInPage> {
                   hintText: 'Enter your password',
                   border: OutlineInputBorder(),
                   labelText: 'Password',
+                  errorText: _passwordErrorMessage,
                   suffixIcon: IconButton(
                     icon: Icon(
                       _passwordVisible
@@ -109,11 +177,29 @@ class _SignInPageState extends State<SignInPage> {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                  onPressed: () async {
+                    bool isValidUsername = _validateEmail() == null;
+                    bool isValidPassword = _validatePassword() == null;
+                    if (!isValidPassword || !isValidUsername) {
+                      return;
+                    }
+
+                    final navigator = Navigator.of(context);
+
+                    String message = await _signIn(
+                      _emailController.text,
+                      _passwordController.text,
                     );
+
+                    if (message == "Ok") {
+                      navigator.push(
+                        MaterialPageRoute(builder: (_) => HomePage()),
+                      );
+                    } else {
+                      setState(() {
+                        _emailErrorMessage = message;
+                      });
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 157, 110, 237),
