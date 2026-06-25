@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/choose_first_player_page.dart';
 import 'package:quiz_app_front/pages/matchmaking_page.dart';
 import '../widgets/fade_text.dart';
 
@@ -56,7 +57,16 @@ class PlaySessionPage extends StatelessWidget {
                           bottom: 30,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChooseFirstPlayerPage(
+                              opponentName: "Jean-Louis",
+                            ),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Accepter",
                         style: TextStyle(

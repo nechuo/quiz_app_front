@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class FadeTextWidget extends StatefulWidget {
   final String text;
   final double fontSize;
+  final Color? color;
 
-  const FadeTextWidget({super.key, required this.text, required this.fontSize});
+  const FadeTextWidget({
+    super.key,
+    required this.text,
+    required this.fontSize,
+    this.color = Colors.black,
+  });
 
   @override
   State<FadeTextWidget> createState() => FadeTextState();
@@ -32,7 +38,7 @@ class FadeTextState extends State<FadeTextWidget> {
       duration: Duration(milliseconds: 500),
       child: Text(
         widget.text,
-        style: TextStyle(fontSize: widget.fontSize),
+        style: TextStyle(fontSize: widget.fontSize, color: widget.color),
         textAlign: TextAlign.center,
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:quiz_app_front/main.dart';
-import 'play_session_page.dart';
+import 'accept_player_page.dart';
 
 class MatchmakingPage extends StatefulWidget {
   const MatchmakingPage({super.key});
