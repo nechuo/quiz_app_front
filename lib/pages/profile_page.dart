@@ -6,17 +6,29 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Center(
         child: Column(
           children: [
-            const Text(
-              "Mon profil",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Container(
+              margin: const EdgeInsets.only(top: 60),
+              child: Column(
+                children: [
+                  const Text(
+                    "Mon profil",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 30, bottom: 30),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.black12,
+                      radius: 50,
+                      child: const Text("Avatar"),
+                    ),
+                  ),
+                  Text("Corentin"),
+                ],
+              ),
             ),
-
-            CircleAvatar(radius: 50),
-
-            Text("Corentin"),
           ],
         ),
       ),

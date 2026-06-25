@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'matchmaking_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,6 +51,35 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'Nouvelle partie',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 40.0, right: 40.0, top: 30.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MatchmakingPage(),
+                      ),
+                    ),
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 157, 110, 237),
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                  ),
+                  child: Text('Lancer une nouvelle partie'),
+                ),
               ),
             ),
           ],
