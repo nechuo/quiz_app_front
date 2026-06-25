@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Text(
+              "Mon profil",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+
+            CircleAvatar(radius: 50),
+
+            Text("Corentin"),
+          ],
+        ),
+      ),
+    );
+  }
+}

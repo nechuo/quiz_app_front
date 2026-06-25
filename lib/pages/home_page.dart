@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(bottom: 0),
               child: Text(
-                'Welcome to Quiz App',
+                'Nouvelle partie',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
