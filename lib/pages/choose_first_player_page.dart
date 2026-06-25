@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/choose_theme_page.dart';
+import 'package:quiz_app_front/pages/waiting_for_theme_page.dart';
 import 'package:quiz_app_front/widgets/fade_button.dart';
 import 'package:quiz_app_front/widgets/fade_text.dart';
 import "dart:async";
@@ -125,7 +127,20 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
               width: double.infinity,
               margin: EdgeInsets.all(50),
               child: FadeButtonWidget(
-                callback: () {},
+                callback: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        if (firstPlayer == 1) {
+                          return ChooseThemePage();
+                        } else {
+                          return WaitingForThemePage();
+                        }
+                      },
+                    ),
+                  );
+                },
                 fontSize: 30,
                 text: "Commencer la partie",
               ),
