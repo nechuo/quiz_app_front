@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/settings_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -10,7 +11,28 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 60),
+              margin: EdgeInsets.all(40),
+
+              child: Align(
+                alignment: Alignment.topRight,
+                child: InkWell(
+                  child: IconButton(
+                    icon: const Icon(Icons.settings),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SettingsPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+
+            Container(
+              margin: const EdgeInsets.only(top: 10),
               child: Column(
                 children: [
                   const Text(
@@ -25,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                       child: const Text("Avatar"),
                     ),
                   ),
-                  Text("Corentin"),
+                  Text("Nom d'utilisateur"),
                 ],
               ),
             ),
