@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app_front/pages/game_page.dart';
 
 class ChooseThemePage extends StatefulWidget {
-  const ChooseThemePage({super.key});
+  final String roundName;
+
+  const ChooseThemePage({super.key, required this.roundName});
 
   @override
   State<StatefulWidget> createState() => ChooseThemePageState();
@@ -50,7 +52,10 @@ class ChooseThemePageState extends State<ChooseThemePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => GamePage()),
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  GamePage(roundName: widget.roundName),
+                            ),
                           );
                         },
                         child: Padding(

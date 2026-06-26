@@ -133,7 +133,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
                     MaterialPageRoute(
                       builder: (context) {
                         if (firstPlayer == 1) {
-                          return ChooseThemePage();
+                          return ChooseThemePage(roundName: "Première Manche");
                         } else {
                           return WaitingForThemePage();
                         }

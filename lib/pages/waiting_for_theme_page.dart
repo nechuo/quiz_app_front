@@ -17,7 +17,9 @@ class WaitingForThemePageState extends State<WaitingForThemePage>
 
   Timer _setTimer() => Timer(const Duration(seconds: 3), () {
     navigatorKey.currentState?.push(
-      MaterialPageRoute(builder: (_) => const GamePage()),
+      MaterialPageRoute(
+        builder: (_) => const GamePage(roundName: "Première Manche"),
+      ),
     );
   });
 
