@@ -1,6 +1,7 @@
 //import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/between_rounds_page.dart';
 
 class GamePage extends StatefulWidget {
   final String roundName;
@@ -89,11 +90,16 @@ class GamePageState extends State<GamePage> {
       });
     }
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         if (currentQuestion < 4) {
           currentQuestion++;
-        } else {}
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BetweenRoundsPage()),
+          );
+        }
         redAnswerIndex = -1;
         greenAnswerIndex = -1;
       });
