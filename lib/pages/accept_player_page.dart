@@ -9,135 +9,127 @@ class PlaySessionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      child: Scaffold(
-        bottomNavigationBar: Container(
-          margin: EdgeInsets.only(bottom: 20, left: 20),
-          child: InkWell(
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(right: 2),
-                  child: Icon(Icons.keyboard_arrow_left),
-                ),
-                Text("Revenir a l'accueil", style: TextStyle(fontSize: 25)),
-              ],
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MainPage()),
-              );
-            },
-          ),
-        ),
-        body: Center(
-          child: Column(
+    return Scaffold(
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(bottom: 20, left: 20),
+        child: InkWell(
+          child: Row(
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 60),
-                child: const Text(
-                  "Partie trouvée !",
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
+                margin: EdgeInsets.only(right: 2),
+                child: Icon(Icons.keyboard_arrow_left),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 40, left: 30, right: 30),
-                child: Card(
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 70, bottom: 70),
-                      child: FadeTextWidget(
-                        text: "'Nom de l'adversaire'",
-                        fontSize: 50,
-                      ),
+              Text("Revenir a l'accueil", style: TextStyle(fontSize: 25)),
+            ],
+          ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MainPage()),
+            );
+          },
+        ),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 60),
+              child: const Text(
+                "Partie trouvée !",
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 40, left: 30, right: 30),
+              child: Card(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 70, bottom: 70),
+                    child: FadeTextWidget(
+                      text: "'Nom de l'adversaire'",
+                      fontSize: 50,
                     ),
                   ),
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 10),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            218,
-                            103,
-                            215,
-                            106,
-                          ),
-                          padding: EdgeInsets.only(
-                            left: 50,
-                            right: 50,
-                            top: 30,
-                            bottom: 30,
-                          ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(
+                          218,
+                          103,
+                          215,
+                          106,
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ChooseFirstPlayerPage(
-                                opponentName: "Jean-Louis",
-                              ),
+                        padding: EdgeInsets.only(
+                          left: 50,
+                          right: 50,
+                          top: 30,
+                          bottom: 30,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChooseFirstPlayerPage(
+                              opponentName: "Jean-Louis",
                             ),
-                          );
-                        },
-                        child: Text(
-                          "Accepter",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 20,
                           ),
+                        );
+                      },
+                      child: Text(
+                        "Accepter",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 20,
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            218,
-                            220,
-                            66,
-                            66,
-                          ),
-                          padding: EdgeInsets.only(
-                            left: 50,
-                            right: 50,
-                            top: 30,
-                            bottom: 30,
-                          ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(218, 220, 66, 66),
+                        padding: EdgeInsets.only(
+                          left: 50,
+                          right: 50,
+                          top: 30,
+                          bottom: 30,
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MatchmakingPage(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Rejeter",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 20,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MatchmakingPage(),
                           ),
+                        );
+                      },
+                      child: Text(
+                        "Rejeter",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 20,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
