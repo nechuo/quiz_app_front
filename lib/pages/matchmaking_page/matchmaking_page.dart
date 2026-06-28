@@ -51,12 +51,7 @@ class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            MatchmakingPageSearchLabel(),
-            MatchmakingPageLoadingAnimation(),
-          ],
-        ),
+        child: Column(children: [SearchLabel(), LoadingAnimation()]),
       ),
     );
   }

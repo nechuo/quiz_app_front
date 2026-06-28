@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
 
-class HomePageTitle extends StatelessWidget {
-  const HomePageTitle({super.key});
+class Title extends StatelessWidget {
+  const Title({super.key});
 
   @override
   Widget build(BuildContext context) {

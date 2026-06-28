@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+// BottomNavigationBar already exists in the Flutter framework.
+// Since this page does not use this one, then hide it to avoid a collision.
+import 'package:flutter/material.dart' hide BottomNavigationBar;
 import 'package:quiz_app_front/pages/accept_player_page/widgets/accept_player_label.dart';
 import 'package:quiz_app_front/pages/accept_player_page/widgets/reject_player_button.dart';
 import 'package:quiz_app_front/pages/accept_player_page/widgets/accept_player_button.dart';
@@ -13,11 +15,11 @@ class PlaySessionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: AcceptPlayerPageBottomNavigationBar(),
+      bottomNavigationBar: BottomNavigationBar(),
       body: Center(
         child: Column(
           children: [
-            AcceptPlayerPageFoundOpponentTitle(),
+            FoundOpponentTitle(),
             AcceptPlayerLabel(opponentName: opponentName),
             Container(
               margin: const EdgeInsets.only(top: 40),

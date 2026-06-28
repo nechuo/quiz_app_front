@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
 
-class AcceptPlayerPageFoundOpponentTitle extends StatelessWidget {
-  const AcceptPlayerPageFoundOpponentTitle({super.key});
+class FoundOpponentTitle extends StatelessWidget {
+  const FoundOpponentTitle({super.key});
 
   @override
   Widget build(BuildContext context) => Container(

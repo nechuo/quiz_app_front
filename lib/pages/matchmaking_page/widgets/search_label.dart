@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
 
-class MatchmakingPageSearchLabel extends StatelessWidget {
-  const MatchmakingPageSearchLabel({super.key});
+class SearchLabel extends StatelessWidget {
+  const SearchLabel({super.key});
 
   @override
   Widget build(BuildContext context) => Container(

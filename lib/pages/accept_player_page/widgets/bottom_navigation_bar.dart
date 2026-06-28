@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
 import 'package:quiz_app_front/pages/main_page.dart';
 
-class AcceptPlayerPageBottomNavigationBar extends StatelessWidget {
-  const AcceptPlayerPageBottomNavigationBar({super.key});
+class BottomNavigationBar extends StatelessWidget {
+  const BottomNavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) => Container(
