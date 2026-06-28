@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'history.dart';
-import 'home_page.dart';
+import 'home_page/home_page.dart';
 import 'profile_page.dart';
 import '../widgets/navigation_bar.dart';
 

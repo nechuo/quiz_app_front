@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './home_page.dart';
+import 'home_page/home_page.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key, required this.title});
