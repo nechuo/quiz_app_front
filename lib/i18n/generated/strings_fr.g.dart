@@ -41,6 +41,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final Translations$home_page$fr home_page = Translations$home_page$fr._(_root);
+	late final Translations$matchmaking_page$fr matchmaking_page = Translations$matchmaking_page$fr._(_root);
 }
 
 // Path: home_page
@@ -58,6 +59,18 @@ class Translations$home_page$fr {
 	String get run_game => 'Lancer une nouvelle partie';
 }
 
+// Path: matchmaking_page
+class Translations$matchmaking_page$fr {
+	Translations$matchmaking_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Recherche de partie...'
+	String get searching_game => 'Recherche de partie...';
+}
+
 /// The flat map containing all translations for locale <fr>.
 /// Only for edge cases! For simple maps, use the map function of this library.
 ///
@@ -68,6 +81,7 @@ extension on Translations {
 		return switch (path) {
 			'home_page.new_game' => 'Nouvelle partie',
 			'home_page.run_game' => 'Lancer une nouvelle partie',
+			'matchmaking_page.searching_game' => 'Recherche de partie...',
 			_ => null,
 		};
 	}

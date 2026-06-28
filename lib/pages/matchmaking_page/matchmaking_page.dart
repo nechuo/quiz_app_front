@@ -1,9 +1,9 @@
 import 'dart:async';
-
+import '../accept_player_page.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:quiz_app_front/main.dart';
-import 'accept_player_page.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/widgets/search_label.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/widgets/loading_animation.dart';
 
 class MatchmakingPage extends StatefulWidget {
   const MatchmakingPage({super.key});
@@ -30,6 +30,7 @@ class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    // This enables the route observer to listen for route changes, allowing the user to restart the timer when returning to this page.
     routeObserver.subscribe(this, ModalRoute.of(context) as PageRoute);
   }
 
@@ -42,6 +43,7 @@ class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
 
   @override
   void didPopNext() {
+    // If the user navigates back to this page, then restart the timer to ensure the transition to the next page occurs after 3 seconds.
     timer = _setTimer();
   }
 
@@ -51,19 +53,8 @@ class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
       body: Center(
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 200, bottom: 200),
-              child: Text(
-                "Recherche de partie...",
-                style: TextStyle(fontSize: 40),
-              ),
-            ),
-            Container(
-              child: LoadingAnimationWidget.waveDots(
-                color: Colors.black,
-                size: 200,
-              ),
-            ),
+            MatchmakingPageSearchLabel(),
+            MatchmakingPageLoadingAnimation(),
           ],
         ),
       ),

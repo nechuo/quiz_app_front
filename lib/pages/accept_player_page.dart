@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page.dart';
 import 'package:quiz_app_front/pages/main_page.dart';
-import 'package:quiz_app_front/pages/matchmaking_page.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/matchmaking_page.dart';
 import '../widgets/fade_text.dart';
 
 class PlaySessionPage extends StatelessWidget {

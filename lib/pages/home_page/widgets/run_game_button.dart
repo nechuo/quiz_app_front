@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
-import 'package:quiz_app_front/pages/matchmaking_page.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/matchmaking_page.dart';
 
 class RunGameButton extends StatelessWidget {
   const RunGameButton({super.key});
