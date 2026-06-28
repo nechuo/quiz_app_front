@@ -64,7 +64,7 @@ class PlaySessionPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 20),
+                      margin: EdgeInsets.only(right: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color.fromARGB(
@@ -94,7 +94,7 @@ class PlaySessionPage extends StatelessWidget {
                           "Accepter",
                           style: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 25,
+                            fontSize: 20,
                           ),
                         ),
                       ),
@@ -128,7 +128,7 @@ class PlaySessionPage extends StatelessWidget {
                           "Rejeter",
                           style: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 25,
+                            fontSize: 20,
                           ),
                         ),
                       ),

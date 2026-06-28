@@ -124,11 +124,11 @@ class GamePageState extends State<GamePage> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(40),
-              child: Text(widget.roundName, style: TextStyle(fontSize: 50)),
+              margin: EdgeInsets.only(top: 50, bottom: 20),
+              child: Text(widget.roundName, style: TextStyle(fontSize: 45)),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20, bottom: 100),
+              margin: EdgeInsets.only(top: 20),
               child: Text(
                 (questions[currentQuestion]["question"] as String),
                 style: TextStyle(fontSize: 35),
@@ -136,7 +136,6 @@ class GamePageState extends State<GamePage> {
               ),
             ),
             Container(
-              width: double.infinity,
               margin: EdgeInsets.only(top: 40),
               child: Column(
                 children: [
@@ -144,9 +143,8 @@ class GamePageState extends State<GamePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.all(20),
-                        width: 200,
-                        height: 200,
+                        width: 150,
+                        margin: EdgeInsets.only(right: 20),
                         child: Card(
                           color: calculateCardColor(0),
                           child: InkWell(
@@ -174,8 +172,7 @@ class GamePageState extends State<GamePage> {
                         ),
                       ),
                       SizedBox(
-                        width: 200,
-                        height: 200,
+                        width: 150,
                         child: Card(
                           color: calculateCardColor(1),
                           child: InkWell(
@@ -209,9 +206,8 @@ class GamePageState extends State<GamePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
+                        width: 150,
                         margin: EdgeInsets.all(20),
-                        width: 200,
-                        height: 200,
                         child: Card(
                           color: calculateCardColor(2),
                           child: InkWell(
@@ -239,8 +235,7 @@ class GamePageState extends State<GamePage> {
                         ),
                       ),
                       SizedBox(
-                        width: 200,
-                        height: 200,
+                        width: 150,
                         child: Card(
                           color: calculateCardColor(3),
                           child: InkWell(

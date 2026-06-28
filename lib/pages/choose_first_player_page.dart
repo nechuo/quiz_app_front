@@ -22,7 +22,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
   Color opponentBgColor = Colors.white70;
 
   Color meTextColor = Colors.black;
-  Color oppenentTextColor = Colors.black;
+  Color opponentTextColor = Colors.black;
 
   int firstPlayer = 0;
 
@@ -42,12 +42,12 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
               meBgColor = Colors.purple;
               meTextColor = Colors.white;
               opponentBgColor = Colors.white70;
-              oppenentTextColor = Colors.black;
+              opponentTextColor = Colors.black;
             } else {
               meBgColor = Colors.white70;
               meTextColor = Colors.black;
               opponentBgColor = Colors.purple;
-              oppenentTextColor = Colors.white;
+              opponentTextColor = Colors.white;
             }
           });
         } else {
@@ -72,7 +72,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 10, bottom: 30),
+            margin: EdgeInsets.only(top: 10, bottom: 20),
             child: Text(
               "Choix du premier joueur",
               textAlign: TextAlign.center,
@@ -86,11 +86,11 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
               child: SizedBox(
                 width: double.infinity,
                 child: Padding(
-                  padding: EdgeInsets.only(top: 70, bottom: 70),
+                  padding: EdgeInsets.only(top: 50, bottom: 50),
                   child: FadeTextWidget(
                     text: "Adversaire",
-                    fontSize: 50,
-                    color: oppenentTextColor,
+                    fontSize: 45,
+                    color: opponentTextColor,
                   ),
                 ),
               ),
@@ -98,7 +98,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
           ),
 
           Container(
-            height: 100,
+            height: 85,
             alignment: Alignment.center,
             child: Text(
               "VS",
@@ -112,10 +112,10 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
               child: SizedBox(
                 width: double.infinity,
                 child: Padding(
-                  padding: EdgeInsets.only(top: 70, bottom: 70),
+                  padding: EdgeInsets.only(top: 50, bottom: 50),
                   child: FadeTextWidget(
                     text: "Moi",
-                    fontSize: 50,
+                    fontSize: 45,
                     color: meTextColor,
                   ),
                 ),
