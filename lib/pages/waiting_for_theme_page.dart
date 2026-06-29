@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:quiz_app_front/main.dart';
-import 'package:quiz_app_front/pages/game_page.dart';
+import 'package:quiz_app_front/pages/game_page/game_page.dart';
 
 class WaitingForThemePage extends StatefulWidget {
   const WaitingForThemePage({super.key});

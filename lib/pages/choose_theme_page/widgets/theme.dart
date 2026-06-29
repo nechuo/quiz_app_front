@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:quiz_app_front/pages/game_page.dart";
+import "package:quiz_app_front/pages/game_page/game_page.dart";
 
 class Theme extends StatelessWidget {
   final Color themeColor;

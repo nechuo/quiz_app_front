@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
-import 'package:quiz_app_front/pages/choose_first_player_page.dart';
+import 'package:quiz_app_front/pages/choose_first_player_page/choose_first_player_page.dart';
 
 class AcceptPlayerButton extends StatelessWidget {
   final String opponentName;

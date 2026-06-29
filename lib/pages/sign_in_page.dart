@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import './sign_up_page.dart';
 import 'home_page/home_page.dart';
-import './forgot_password_page.dart';
+import 'forgot_password_page/forgot_password_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
