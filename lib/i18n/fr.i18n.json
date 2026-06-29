@@ -6,6 +6,10 @@
     "history_page": {
         "history_label": "Historique"
     },
+    "profile_page": {
+        "my_profile": "Mon profil",
+        "user_name": "Nom d'utilisateur"
+    },
     "forgot_password_page": {
         "send_button_label": "Envoyer",
         "email_field_label": "Email:",
