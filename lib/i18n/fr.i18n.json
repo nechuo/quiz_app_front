@@ -21,6 +21,9 @@
         "choose_first_player": "Choix du premier joueur",
         "start_game": "Commencer la partie"
     },
+    "choose_theme_page": {
+        "choose_theme_label": "Choisis un thème:"
+    },
     "shared": {
         "round_names": {
             "first_round_name": "Première Manche",
@@ -28,6 +31,16 @@
             "third_round_name": "Troisième Manche",
             "fourth_round_name": "Quatrième Manche",
             "fifth_round_name": "Cinquième Manche"
+        },
+        "theme_names": {
+            "music": "Musique",
+            "biology": "Biologie",
+            "history": "Histoire",
+            "geography": "Géographie",
+            "literature": "Littérature",
+            "mathematics": "Mathématiques",
+            "entertainment": "Divertissement",
+            "physics-chemistry": "Phisique-Chimie"
         }
     }
 }

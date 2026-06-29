@@ -45,6 +45,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	late final Translations$accept_player_page$fr accept_player_page = Translations$accept_player_page$fr._(_root);
 	late final Translations$between_rounds_page$fr between_rounds_page = Translations$between_rounds_page$fr._(_root);
 	late final Translations$choose_first_player_page$fr choose_first_player_page = Translations$choose_first_player_page$fr._(_root);
+	late final Translations$choose_theme_page$fr choose_theme_page = Translations$choose_theme_page$fr._(_root);
 	late final Translations$shared$fr shared = Translations$shared$fr._(_root);
 }
 
@@ -129,6 +130,18 @@ class Translations$choose_first_player_page$fr {
 	String get start_game => 'Commencer la partie';
 }
 
+// Path: choose_theme_page
+class Translations$choose_theme_page$fr {
+	Translations$choose_theme_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Choisis un thème:'
+	String get choose_theme_label => 'Choisis un thème:';
+}
+
 // Path: shared
 class Translations$shared$fr {
 	Translations$shared$fr._(this._root);
@@ -137,6 +150,7 @@ class Translations$shared$fr {
 
 	// Translations
 	late final Translations$shared$round_names$fr round_names = Translations$shared$round_names$fr._(_root);
+	late final Translations$shared$theme_names$fr theme_names = Translations$shared$theme_names$fr._(_root);
 }
 
 // Path: shared.round_names
@@ -163,6 +177,39 @@ class Translations$shared$round_names$fr {
 	String get fifth_round_name => 'Cinquième Manche';
 }
 
+// Path: shared.theme_names
+class Translations$shared$theme_names$fr {
+	Translations$shared$theme_names$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Musique'
+	String get music => 'Musique';
+
+	/// fr: 'Biologie'
+	String get biology => 'Biologie';
+
+	/// fr: 'Histoire'
+	String get history => 'Histoire';
+
+	/// fr: 'Géographie'
+	String get geography => 'Géographie';
+
+	/// fr: 'Littérature'
+	String get literature => 'Littérature';
+
+	/// fr: 'Mathématiques'
+	String get mathematics => 'Mathématiques';
+
+	/// fr: 'Divertissement'
+	String get entertainment => 'Divertissement';
+
+	/// fr: 'Phisique-Chimie'
+	String get physics-chemistry => 'Phisique-Chimie';
+}
+
 /// The flat map containing all translations for locale <fr>.
 /// Only for edge cases! For simple maps, use the map function of this library.
 ///
@@ -183,11 +230,20 @@ extension on Translations {
 			'choose_first_player_page.me_label' => 'Moi',
 			'choose_first_player_page.choose_first_player' => 'Choix du premier joueur',
 			'choose_first_player_page.start_game' => 'Commencer la partie',
+			'choose_theme_page.choose_theme_label' => 'Choisis un thème:',
 			'shared.round_names.first_round_name' => 'Première Manche',
 			'shared.round_names.second_round_name' => 'Seconde Manche',
 			'shared.round_names.third_round_name' => 'Troisième Manche',
 			'shared.round_names.fourth_round_name' => 'Quatrième Manche',
 			'shared.round_names.fifth_round_name' => 'Cinquième Manche',
+			'shared.theme_names.music' => 'Musique',
+			'shared.theme_names.biology' => 'Biologie',
+			'shared.theme_names.history' => 'Histoire',
+			'shared.theme_names.geography' => 'Géographie',
+			'shared.theme_names.literature' => 'Littérature',
+			'shared.theme_names.mathematics' => 'Mathématiques',
+			'shared.theme_names.entertainment' => 'Divertissement',
+			'shared.theme_names.physics-chemistry' => 'Phisique-Chimie',
 			_ => null,
 		};
 	}
