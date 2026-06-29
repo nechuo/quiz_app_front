@@ -41,6 +41,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final Translations$home_page$fr home_page = Translations$home_page$fr._(_root);
+	late final Translations$history_page$fr history_page = Translations$history_page$fr._(_root);
 	late final Translations$forgot_password_page$fr forgot_password_page = Translations$forgot_password_page$fr._(_root);
 	late final Translations$matchmaking_page$fr matchmaking_page = Translations$matchmaking_page$fr._(_root);
 	late final Translations$accept_player_page$fr accept_player_page = Translations$accept_player_page$fr._(_root);
@@ -63,6 +64,18 @@ class Translations$home_page$fr {
 
 	/// fr: 'Lancer une nouvelle partie'
 	String get run_game => 'Lancer une nouvelle partie';
+}
+
+// Path: history_page
+class Translations$history_page$fr {
+	Translations$history_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Historique'
+	String get history_label => 'Historique';
 }
 
 // Path: forgot_password_page
@@ -242,6 +255,7 @@ extension on Translations {
 		return switch (path) {
 			'home_page.new_game' => 'Nouvelle partie',
 			'home_page.run_game' => 'Lancer une nouvelle partie',
+			'history_page.history_label' => 'Historique',
 			'forgot_password_page.send_button_label' => 'Envoyer',
 			'forgot_password_page.email_field_label' => 'Email:',
 			'forgot_password_page.enter_email' => 'Entrez votre Email',
