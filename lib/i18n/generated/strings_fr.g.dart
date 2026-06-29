@@ -45,6 +45,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	late final Translations$profile_page$fr profile_page = Translations$profile_page$fr._(_root);
 	late final Translations$settings_page$fr settings_page = Translations$settings_page$fr._(_root);
 	late final Translations$sing_in_page$fr sing_in_page = Translations$sing_in_page$fr._(_root);
+	late final Translations$sign_up_page$fr sign_up_page = Translations$sign_up_page$fr._(_root);
 	late final Translations$forgot_password_page$fr forgot_password_page = Translations$forgot_password_page$fr._(_root);
 	late final Translations$matchmaking_page$fr matchmaking_page = Translations$matchmaking_page$fr._(_root);
 	late final Translations$accept_player_page$fr accept_player_page = Translations$accept_player_page$fr._(_root);
@@ -123,9 +124,6 @@ class Translations$sing_in_page$fr {
 	/// fr: 'Email:'
 	String get email_field_label => 'Email:';
 
-	/// fr: 'Bienvenue sur Qwiz !'
-	String get welcome_label => 'Bienvenue sur Qwiz !';
-
 	/// fr: 'Entrez votre Email'
 	String get enter_email_label => 'Entrez votre Email';
 
@@ -149,6 +147,43 @@ class Translations$sing_in_page$fr {
 
 	/// fr: 'Créer un compte'
 	String get sign_up_label => 'Créer un compte';
+}
+
+// Path: sign_up_page
+class Translations$sign_up_page$fr {
+	Translations$sign_up_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final Translations$sign_up_page$error_labels$fr error_labels = Translations$sign_up_page$error_labels$fr._(_root);
+
+	/// fr: 'Ok'
+	String get ok => 'Ok';
+
+	/// fr: 'Connectez-vous'
+	String get sign_in_label => 'Connectez-vous';
+
+	/// fr: 'Mot de passe:'
+	String get password_field_label => 'Mot de passe:';
+
+	/// fr: 'Créer le compte'
+	String get create_account_button_label => 'Créer le compte';
+
+	/// fr: 'Creez un compte pour continuer'
+	String get sign_up_label => 'Creez un compte pour continuer';
+
+	/// fr: 'Entrez votre mot de passe'
+	String get enter_password_label => 'Entrez votre mot de passe';
+
+	/// fr: 'Confirmez votre mot de passe'
+	String get confirm_your_password => 'Confirmez votre mot de passe';
+
+	/// fr: 'Confirmation du mot de passe:'
+	String get confirm_password_label => 'Confirmation du mot de passe:';
+
+	/// fr: 'Vous avez déjà un compte ?'
+	String get already_have_account_label => 'Vous avez déjà un compte ?';
 }
 
 // Path: forgot_password_page
@@ -259,6 +294,9 @@ class Translations$shared$fr {
 	// Translations
 	late final Translations$shared$round_names$fr round_names = Translations$shared$round_names$fr._(_root);
 	late final Translations$shared$theme_names$fr theme_names = Translations$shared$theme_names$fr._(_root);
+
+	/// fr: 'Bienvenue sur Qwiz !'
+	String get welcome_label => 'Bienvenue sur Qwiz !';
 }
 
 // Path: sing_in_page.error_labels
@@ -280,6 +318,24 @@ class Translations$sing_in_page$error_labels$fr {
 
 	/// fr: 'Une erreur inconnue s'est produite'
 	String get unknown_error => 'Une erreur inconnue s\'est produite';
+}
+
+// Path: sign_up_page.error_labels
+class Translations$sign_up_page$error_labels$fr {
+	Translations$sign_up_page$error_labels$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Informations manquantes'
+	String get missing_credentials => 'Informations manquantes';
+
+	/// fr: 'Une erreur inconnue s'est produite'
+	String get unknown_error => 'Une erreur inconnue s\'est produite';
+
+	/// fr: 'Un.e utilisateur.ice avec ce nom d'utilisateur existe deja.'
+	String get already_existing_user => 'Un.e utilisateur.ice avec ce nom d\'utilisateur existe deja.';
 }
 
 // Path: shared.round_names
@@ -359,7 +415,6 @@ extension on Translations {
 			'sing_in_page.error_labels.unknown_error' => 'Une erreur inconnue s\'est produite',
 			'sing_in_page.ok' => 'Ok',
 			'sing_in_page.email_field_label' => 'Email:',
-			'sing_in_page.welcome_label' => 'Bienvenue sur Qwiz !',
 			'sing_in_page.enter_email_label' => 'Entrez votre Email',
 			'sing_in_page.sign_in_label' => 'Connectez-vous pour continuer',
 			'sing_in_page.password_field_Label' => 'Mot de passe:',
@@ -368,6 +423,18 @@ extension on Translations {
 			'sing_in_page.forgot_password_label' => 'Mot de passe oublié ?',
 			'sing_in_page.create_account_link_label' => 'Vous n\'avez pas de compte ?',
 			'sing_in_page.sign_up_label' => 'Créer un compte',
+			'sign_up_page.error_labels.missing_credentials' => 'Informations manquantes',
+			'sign_up_page.error_labels.unknown_error' => 'Une erreur inconnue s\'est produite',
+			'sign_up_page.error_labels.already_existing_user' => 'Un.e utilisateur.ice avec ce nom d\'utilisateur existe deja.',
+			'sign_up_page.ok' => 'Ok',
+			'sign_up_page.sign_in_label' => 'Connectez-vous',
+			'sign_up_page.password_field_label' => 'Mot de passe:',
+			'sign_up_page.create_account_button_label' => 'Créer le compte',
+			'sign_up_page.sign_up_label' => 'Creez un compte pour continuer',
+			'sign_up_page.enter_password_label' => 'Entrez votre mot de passe',
+			'sign_up_page.confirm_your_password' => 'Confirmez votre mot de passe',
+			'sign_up_page.confirm_password_label' => 'Confirmation du mot de passe:',
+			'sign_up_page.already_have_account_label' => 'Vous avez déjà un compte ?',
 			'forgot_password_page.send_button_label' => 'Envoyer',
 			'forgot_password_page.email_field_label' => 'Email:',
 			'forgot_password_page.enter_email' => 'Entrez votre Email',
@@ -396,6 +463,7 @@ extension on Translations {
 			'shared.theme_names.mathematics' => 'Mathématiques',
 			'shared.theme_names.entertainment' => 'Divertissement',
 			'shared.theme_names.physics_chemistry' => 'Physique-Chimie',
+			'shared.welcome_label' => 'Bienvenue sur Qwiz !',
 			_ => null,
 		};
 	}

@@ -22,7 +22,6 @@
         },
         "ok": "Ok",
         "email_field_label": "Email:",
-        "welcome_label": "Bienvenue sur Qwiz !",
         "enter_email_label": "Entrez votre Email",
         "sign_in_label": "Connectez-vous pour continuer",
         "password_field_Label": "Mot de passe:",
@@ -31,6 +30,22 @@
         "forgot_password_label": "Mot de passe oublié ?",
         "create_account_link_label": "Vous n'avez pas de compte ?",
         "sign_up_label": "Créer un compte"
+    },
+    "sign_up_page": {
+        "error_labels": {
+            "missing_credentials": "Informations manquantes",
+            "unknown_error": "Une erreur inconnue s'est produite",
+            "already_existing_user": "Un.e utilisateur.ice avec ce nom d'utilisateur existe deja."
+        },
+        "ok": "Ok",
+        "sign_in_label": "Connectez-vous",
+        "password_field_label": "Mot de passe:",
+        "create_account_button_label": "Créer le compte",
+        "sign_up_label": "Creez un compte pour continuer",
+        "enter_password_label": "Entrez votre mot de passe",
+        "confirm_your_password": "Confirmez votre mot de passe",
+        "confirm_password_label": "Confirmation du mot de passe:",
+        "already_have_account_label": "Vous avez déjà un compte ?"
     },
     "forgot_password_page": {
         "send_button_label": "Envoyer",
@@ -76,6 +91,7 @@
             "mathematics": "Mathématiques",
             "entertainment": "Divertissement",
             "physics_chemistry": "Physique-Chimie"
-        }
+        },
+        "welcome_label": "Bienvenue sur Qwiz !"
     }
 }

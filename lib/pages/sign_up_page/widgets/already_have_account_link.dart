@@ -1,13 +1,13 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/sing_in_page/sign_in_page.dart';
 import "../../../i18n/generated/strings.g.dart";
-import "package:quiz_app_front/pages/sign_up_page/sign_up_page.dart";
 
-class CreateNewAccountLink extends StatelessWidget {
-  const CreateNewAccountLink({super.key});
+class AlreadyHaveAccountLink extends StatelessWidget {
+  const AlreadyHaveAccountLink({super.key});
 
-  void _onCreateNewAccountLinkPressed(BuildContext context) => Navigator.push(
+  void _onSignInLabelLinkPressed(BuildContext context) => Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const SignUpPage(title: 'Sign Up')),
+    MaterialPageRoute(builder: (context) => const SignInPage()),
   );
 
   @override
@@ -19,20 +19,20 @@ class CreateNewAccountLink extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(right: 10),
           child: Text(
-            t.sing_in_page.create_account_link_label,
             style: TextStyle(fontSize: 18),
+            t.sign_up_page.already_have_account_label,
           ),
         ),
         InkWell(
+          onTap: () => _onSignInLabelLinkPressed(context),
           child: Text(
-            t.sing_in_page.sign_up_label,
+            t.sign_up_page.sign_in_label,
             style: TextStyle(
               fontSize: 18,
               decoration: TextDecoration.underline,
               color: const Color.fromARGB(255, 157, 110, 237),
             ),
           ),
-          onTap: () => _onCreateNewAccountLinkPressed(context),
         ),
       ],
     ),

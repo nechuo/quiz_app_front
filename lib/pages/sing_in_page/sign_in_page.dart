@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/widgets/welcome_label.dart';
 import 'package:quiz_app_front/pages/sing_in_page/widgets/email_field.dart';
 import 'package:quiz_app_front/pages/sing_in_page/widgets/sign_in_label.dart';
-import 'package:quiz_app_front/pages/sing_in_page/widgets/welcome_label.dart';
 import 'package:quiz_app_front/pages/sing_in_page/widgets/connect_button.dart';
 import 'package:quiz_app_front/pages/sing_in_page/widgets/password_field.dart';
 import 'package:quiz_app_front/pages/sing_in_page/widgets/forgot_password_link.dart';
