@@ -7,11 +7,12 @@ import 'package:quiz_app_front/pages/choose_first_player_page/widgets/top_icon.d
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/opponent_card.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/start_game_button.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/choose_first_player_label.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/models/player.dart';
 
 class ChooseFirstPlayerPage extends StatefulWidget {
-  final String opponentName;
+  final Player opponent;
 
-  const ChooseFirstPlayerPage({super.key, required this.opponentName});
+  const ChooseFirstPlayerPage({super.key, required this.opponent});
 
   @override
   State<ChooseFirstPlayerPage> createState() => ChooseFirstPlayerPageState();
@@ -71,7 +72,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
           ChooseFirstPlayerLabel(),
           OpponentCard(
             opponentBgColor: opponentBgColor,
-            opponentName: widget.opponentName,
+            opponentName: widget.opponent.name,
             opponentTextColor: opponentTextColor,
           ),
           VsLabel(),

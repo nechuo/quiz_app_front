@@ -14,7 +14,7 @@ class AcceptPlayerLabel extends StatelessWidget {
         width: double.infinity,
         child: Padding(
           padding: EdgeInsets.only(top: 70, bottom: 70),
-          child: FadeTextWidget(text: opponentName, fontSize: 50),
+          child: FadeTextWidget(text: opponentName, fontSize: 30),
         ),
       ),
     ),

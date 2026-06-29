@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quiz_app_front/main.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/models/player.dart';
+import 'package:quiz_app_front/pages/matchmaking_page/services/find_opponent.dart';
 import '../accept_player_page/accept_player_page.dart';
 import 'package:quiz_app_front/pages/matchmaking_page/widgets/search_label.dart';
 import 'package:quiz_app_front/pages/matchmaking_page/widgets/loading_animation.dart';
@@ -15,16 +17,17 @@ class MatchmakingPage extends StatefulWidget {
 class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
   Timer? timer;
 
-  Timer _setTimer() => Timer(const Duration(seconds: 3), () {
+  Timer _setTimer(Player player) => Timer(const Duration(seconds: 2), () {
     navigatorKey.currentState?.push(
-      MaterialPageRoute(builder: (_) => const PlaySessionPage()),
+      MaterialPageRoute(builder: (_) => AcceptPlayerPage(opponent: player)),
     );
   });
 
   @override
   void initState() {
     super.initState();
-    timer = _setTimer();
+    Player player = findOpponent();
+    timer = _setTimer(player);
   }
 
   @override
@@ -44,7 +47,8 @@ class MatchmakingPageState extends State<MatchmakingPage> with RouteAware {
   @override
   void didPopNext() {
     // If the user navigates back to this page, then restart the timer to ensure the transition to the next page occurs after 3 seconds.
-    timer = _setTimer();
+    Player player = findOpponent();
+    timer = _setTimer(player);
   }
 
   @override

@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../../i18n/generated/strings.g.dart';
-import 'package:quiz_app_front/pages/choose_first_player_page/choose_first_player_page.dart';
 
 class AcceptPlayerButton extends StatelessWidget {
-  final String opponentName;
+  final void Function() onAcceptPlayerButtonPressed;
 
-  const AcceptPlayerButton({super.key, required this.opponentName});
-
-  void _onAcceptPlayerButtonPressed(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ChooseFirstPlayerPage(opponentName: opponentName),
-      ),
-    );
-  }
+  const AcceptPlayerButton({
+    super.key,
+    required this.onAcceptPlayerButtonPressed,
+  });
 
   @override
   Widget build(BuildContext context) => Container(
@@ -24,6 +17,7 @@ class AcceptPlayerButton extends StatelessWidget {
         backgroundColor: const Color.fromARGB(218, 103, 215, 106),
         padding: EdgeInsets.only(left: 50, right: 50, top: 30, bottom: 30),
       ),
+      onPressed: onAcceptPlayerButtonPressed,
       child: Text(
         t.accept_player_page.accept_opponent,
         style: TextStyle(
@@ -31,7 +25,6 @@ class AcceptPlayerButton extends StatelessWidget {
           color: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
-      onPressed: () => _onAcceptPlayerButtonPressed(context),
     ),
   );
 }
