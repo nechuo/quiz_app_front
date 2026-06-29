@@ -16,13 +16,13 @@ class ChooseThemePage extends StatefulWidget {
 
 class ChooseThemePageState extends State<ChooseThemePage> {
   final themes = <Map<String, Object>>[
-    {"name": t.shared.theme_names.physics, "color": Colors.teal},
     {"name": t.shared.theme_names.biology, "color": Colors.green},
     {"name": t.shared.theme_names.history, "color": Colors.brown},
     {"name": t.shared.theme_names.geography, "color": Colors.blue},
     {"name": t.shared.theme_names.mathematics, "color": Colors.red},
     {"name": t.shared.theme_names.literature, "color": Colors.purple},
     {"name": t.shared.theme_names.entertainment, "color": Colors.orange},
+    {"name": t.shared.theme_names.physics_chemistry, "color": Colors.teal},
   ];
 
   @override

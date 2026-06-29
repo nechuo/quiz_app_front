@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_front/pages/settings_page.dart';
+import 'package:quiz_app_front/pages/settings_page/settings_page.dart';
 
 class SettingsButton extends StatelessWidget {
   const SettingsButton({super.key});

@@ -43,6 +43,8 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	late final Translations$home_page$fr home_page = Translations$home_page$fr._(_root);
 	late final Translations$history_page$fr history_page = Translations$history_page$fr._(_root);
 	late final Translations$profile_page$fr profile_page = Translations$profile_page$fr._(_root);
+	late final Translations$settings_page$fr settings_page = Translations$settings_page$fr._(_root);
+	late final Translations$sing_in_page$fr sing_in_page = Translations$sing_in_page$fr._(_root);
 	late final Translations$forgot_password_page$fr forgot_password_page = Translations$forgot_password_page$fr._(_root);
 	late final Translations$matchmaking_page$fr matchmaking_page = Translations$matchmaking_page$fr._(_root);
 	late final Translations$accept_player_page$fr accept_player_page = Translations$accept_player_page$fr._(_root);
@@ -92,6 +94,61 @@ class Translations$profile_page$fr {
 
 	/// fr: 'Nom d'utilisateur'
 	String get user_name => 'Nom d\'utilisateur';
+}
+
+// Path: settings_page
+class Translations$settings_page$fr {
+	Translations$settings_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Paramètres'
+	String get settings_page_label => 'Paramètres';
+}
+
+// Path: sing_in_page
+class Translations$sing_in_page$fr {
+	Translations$sing_in_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final Translations$sing_in_page$error_labels$fr error_labels = Translations$sing_in_page$error_labels$fr._(_root);
+
+	/// fr: 'Ok'
+	String get ok => 'Ok';
+
+	/// fr: 'Email:'
+	String get email_field_label => 'Email:';
+
+	/// fr: 'Bienvenue sur Qwiz !'
+	String get welcome_label => 'Bienvenue sur Qwiz !';
+
+	/// fr: 'Entrez votre Email'
+	String get enter_email_label => 'Entrez votre Email';
+
+	/// fr: 'Connectez-vous pour continuer'
+	String get sign_in_label => 'Connectez-vous pour continuer';
+
+	/// fr: 'Mot de passe:'
+	String get password_field_Label => 'Mot de passe:';
+
+	/// fr: 'Entrez votre mot de passe'
+	String get enter_password_label => 'Entrez votre mot de passe';
+
+	/// fr: 'Connexion'
+	String get login_label => 'Connexion';
+
+	/// fr: 'Mot de passe oublié ?'
+	String get forgot_password_label => 'Mot de passe oublié ?';
+
+	/// fr: 'Vous n'avez pas de compte ?'
+	String get create_account_link_label => 'Vous n\'avez pas de compte ?';
+
+	/// fr: 'Créer un compte'
+	String get sign_up_label => 'Créer un compte';
 }
 
 // Path: forgot_password_page
@@ -204,6 +261,27 @@ class Translations$shared$fr {
 	late final Translations$shared$theme_names$fr theme_names = Translations$shared$theme_names$fr._(_root);
 }
 
+// Path: sing_in_page.error_labels
+class Translations$sing_in_page$error_labels$fr {
+	Translations$sing_in_page$error_labels$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Compte introuvable'
+	String get missing_account => 'Compte introuvable';
+
+	/// fr: 'Mot de passe incorect'
+	String get incorrect_password => 'Mot de passe incorect';
+
+	/// fr: 'Informations manquantes'
+	String get missing_credentials => 'Informations manquantes';
+
+	/// fr: 'Une erreur inconnue s'est produite'
+	String get unknown_error => 'Une erreur inconnue s\'est produite';
+}
+
 // Path: shared.round_names
 class Translations$shared$round_names$fr {
 	Translations$shared$round_names$fr._(this._root);
@@ -257,8 +335,8 @@ class Translations$shared$theme_names$fr {
 	/// fr: 'Divertissement'
 	String get entertainment => 'Divertissement';
 
-	/// fr: 'Phisique-Chimie'
-	String get physics-chemistry => 'Phisique-Chimie';
+	/// fr: 'Physique-Chimie'
+	String get physics_chemistry => 'Physique-Chimie';
 }
 
 /// The flat map containing all translations for locale <fr>.
@@ -274,6 +352,22 @@ extension on Translations {
 			'history_page.history_label' => 'Historique',
 			'profile_page.my_profile' => 'Mon profil',
 			'profile_page.user_name' => 'Nom d\'utilisateur',
+			'settings_page.settings_page_label' => 'Paramètres',
+			'sing_in_page.error_labels.missing_account' => 'Compte introuvable',
+			'sing_in_page.error_labels.incorrect_password' => 'Mot de passe incorect',
+			'sing_in_page.error_labels.missing_credentials' => 'Informations manquantes',
+			'sing_in_page.error_labels.unknown_error' => 'Une erreur inconnue s\'est produite',
+			'sing_in_page.ok' => 'Ok',
+			'sing_in_page.email_field_label' => 'Email:',
+			'sing_in_page.welcome_label' => 'Bienvenue sur Qwiz !',
+			'sing_in_page.enter_email_label' => 'Entrez votre Email',
+			'sing_in_page.sign_in_label' => 'Connectez-vous pour continuer',
+			'sing_in_page.password_field_Label' => 'Mot de passe:',
+			'sing_in_page.enter_password_label' => 'Entrez votre mot de passe',
+			'sing_in_page.login_label' => 'Connexion',
+			'sing_in_page.forgot_password_label' => 'Mot de passe oublié ?',
+			'sing_in_page.create_account_link_label' => 'Vous n\'avez pas de compte ?',
+			'sing_in_page.sign_up_label' => 'Créer un compte',
 			'forgot_password_page.send_button_label' => 'Envoyer',
 			'forgot_password_page.email_field_label' => 'Email:',
 			'forgot_password_page.enter_email' => 'Entrez votre Email',
@@ -301,7 +395,7 @@ extension on Translations {
 			'shared.theme_names.literature' => 'Littérature',
 			'shared.theme_names.mathematics' => 'Mathématiques',
 			'shared.theme_names.entertainment' => 'Divertissement',
-			'shared.theme_names.physics-chemistry' => 'Phisique-Chimie',
+			'shared.theme_names.physics_chemistry' => 'Physique-Chimie',
 			_ => null,
 		};
 	}

@@ -10,6 +10,28 @@
         "my_profile": "Mon profil",
         "user_name": "Nom d'utilisateur"
     },
+    "settings_page": {
+        "settings_page_label": "Paramètres"
+    },
+    "sing_in_page": {
+        "error_labels": {
+            "missing_account": "Compte introuvable",
+            "incorrect_password": "Mot de passe incorect",
+            "missing_credentials": "Informations manquantes",
+            "unknown_error": "Une erreur inconnue s'est produite"
+        },
+        "ok": "Ok",
+        "email_field_label": "Email:",
+        "welcome_label": "Bienvenue sur Qwiz !",
+        "enter_email_label": "Entrez votre Email",
+        "sign_in_label": "Connectez-vous pour continuer",
+        "password_field_Label": "Mot de passe:",
+        "enter_password_label": "Entrez votre mot de passe",
+        "login_label": "Connexion",
+        "forgot_password_label": "Mot de passe oublié ?",
+        "create_account_link_label": "Vous n'avez pas de compte ?",
+        "sign_up_label": "Créer un compte"
+    },
     "forgot_password_page": {
         "send_button_label": "Envoyer",
         "email_field_label": "Email:",
@@ -53,7 +75,7 @@
             "literature": "Littérature",
             "mathematics": "Mathématiques",
             "entertainment": "Divertissement",
-            "physics-chemistry": "Phisique-Chimie"
+            "physics_chemistry": "Physique-Chimie"
         }
     }
 }
