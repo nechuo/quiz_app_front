@@ -1,0 +1,12 @@
+import 'package:flutter/material.dart';
+import "../../../i18n/generated/strings.g.dart";
+
+class HistoryLabel extends StatelessWidget {
+  const HistoryLabel({super.key});
+
+  @override
+  Widget build(BuildContext context) => Text(
+    t.history_page.history_label,
+    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+  );
+}

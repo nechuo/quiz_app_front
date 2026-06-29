@@ -1,0 +1,100 @@
+{
+    "home_page": {
+        "new_game": "Nouvelle partie",
+        "run_game": "Lancer une nouvelle partie"
+    },
+    "history_page": {
+        "history_label": "Historique"
+    },
+    "profile_page": {
+        "my_profile": "Mon profil",
+        "user_name": "Nom d'utilisateur"
+    },
+    "settings_page": {
+        "settings_page_label": "Paramètres"
+    },
+    "sing_in_page": {
+        "error_labels": {
+            "missing_account": "Compte introuvable",
+            "incorrect_password": "Mot de passe incorect",
+            "missing_credentials": "Informations manquantes",
+            "unknown_error": "Une erreur inconnue s'est produite"
+        },
+        "ok": "Ok",
+        "email_field_label": "Email:",
+        "enter_email_label": "Entrez votre Email",
+        "sign_in_label": "Connectez-vous pour continuer",
+        "password_field_Label": "Mot de passe:",
+        "enter_password_label": "Entrez votre mot de passe",
+        "login_label": "Connexion",
+        "forgot_password_label": "Mot de passe oublié ?",
+        "create_account_link_label": "Vous n'avez pas de compte ?",
+        "sign_up_label": "Créer un compte"
+    },
+    "sign_up_page": {
+        "error_labels": {
+            "missing_credentials": "Informations manquantes",
+            "unknown_error": "Une erreur inconnue s'est produite",
+            "already_existing_user": "Un.e utilisateur.ice avec ce nom d'utilisateur existe deja."
+        },
+        "ok": "Ok",
+        "sign_in_label": "Connectez-vous",
+        "password_field_label": "Mot de passe:",
+        "create_account_button_label": "Créer le compte",
+        "sign_up_label": "Creez un compte pour continuer",
+        "enter_password_label": "Entrez votre mot de passe",
+        "confirm_your_password": "Confirmez votre mot de passe",
+        "confirm_password_label": "Confirmation du mot de passe:",
+        "already_have_account_label": "Vous avez déjà un compte ?"
+    },
+    "waiting_for_theme_page": {
+        "waiting_for_theme_label": "L'adversaire choisit un thème..."
+    },
+    "forgot_password_page": {
+        "send_button_label": "Envoyer",
+        "email_field_label": "Email:",
+        "enter_email": "Entrez votre Email",
+        "forgot_your_password_label": "Mot de passe oublié ?"
+    },
+    "matchmaking_page": {
+        "searching_game": "Recherche de partie..."
+    },
+    "accept_player_page": {
+        "reject_opponent": "Refuser",
+        "accept_opponent": "Accepter",
+        "found_opponent": "Partie trouvée !",
+        "come_back_to_home_page": "Revenir a l'accueil"
+    },
+    "between_rounds_page": {
+        "round_status": "Statut des manches"
+    },
+    "choose_first_player_page": {
+        "vs_label": "VS",
+        "me_label": "Moi",
+        "choose_first_player": "Choix du premier joueur",
+        "start_game": "Commencer la partie"
+    },
+    "choose_theme_page": {
+        "choose_theme_label": "Choisis un thème:"
+    },
+    "shared": {
+        "round_names": {
+            "first_round_name": "Première Manche",
+            "second_round_name": "Seconde Manche",
+            "third_round_name": "Troisième Manche",
+            "fourth_round_name": "Quatrième Manche",
+            "fifth_round_name": "Cinquième Manche"
+        },
+        "theme_names": {
+            "music": "Musique",
+            "biology": "Biologie",
+            "history": "Histoire",
+            "geography": "Géographie",
+            "literature": "Littérature",
+            "mathematics": "Mathématiques",
+            "entertainment": "Divertissement",
+            "physics_chemistry": "Physique-Chimie"
+        },
+        "welcome_label": "Bienvenue sur Qwiz !"
+    }
+}

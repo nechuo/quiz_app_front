@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import './pages/main_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'pages/main_page.dart';
+import 'package:flutter/material.dart';
+import "./i18n/generated/strings.g.dart";
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  LocaleSettings.useDeviceLocale();
+  runApp(TranslationProvider(child: MyApp()));
 }
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -15,6 +20,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: TranslationProvider.of(context).flutterLocale, // use provider
+      supportedLocales: AppLocaleUtils.supportedLocales,
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       navigatorObservers: [routeObserver],
       navigatorKey: navigatorKey,
       title: 'Quiz App',
