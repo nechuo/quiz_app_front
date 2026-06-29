@@ -3,6 +3,12 @@
         "new_game": "Nouvelle partie",
         "run_game": "Lancer une nouvelle partie"
     },
+    "forgot_password_page": {
+        "send_button_label": "Envoyer",
+        "email_field_label": "Email:",
+        "enter_email": "Entrez votre Email",
+        "forgot_your_password_label": "Mot de passe oublié ?"
+    },
     "matchmaking_page": {
         "searching_game": "Recherche de partie..."
     },
