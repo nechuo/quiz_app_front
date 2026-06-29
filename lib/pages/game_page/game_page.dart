@@ -27,7 +27,7 @@ class GamePageState extends State<GamePage> {
   void initState() {
     super.initState();
     // TODO implement a service which fetches random questions from the whole set. The `questions` list below should not be imported but randomly extracted.
-    currentQuestion = questions[currentQuestionIndex];
+    currentQuestion = questions[0];
   }
 
   void _onSuggestionPressed(int cardIndex) {
@@ -46,13 +46,12 @@ class GamePageState extends State<GamePage> {
     // If this question was the last one, then redirect to the "between rounds" page to allow the opponents to display the results of the whole round.
     Future.delayed(const Duration(seconds: 1), () {
       setState(() {
+        redAnswerIndex = -1;
+        greenAnswerIndex = -1;
         if (currentQuestionIndex < 4) {
-          setState(() => currentQuestionIndex++);
+          currentQuestionIndex++;
+          currentQuestion = questions[currentQuestionIndex];
         } else {
-          setState(() {
-            redAnswerIndex = -1;
-            greenAnswerIndex = -1;
-          });
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => BetweenRoundsPage()),

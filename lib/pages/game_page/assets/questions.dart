@@ -6,7 +6,7 @@ final List<Question> questions = <Map<String, Object>>[
     "question":
         "Quel organite est souvent surnommé la « centrale énergétique » de la cellule ?",
     "options": ["La mitochondrie", "Le ribosome", "Le noyau", "Le lysosome"],
-    "answer": 0,
+    "correctAnswerIndex": 0,
   },
   {
     "id": 2,
@@ -18,7 +18,7 @@ final List<Question> questions = <Map<String, Object>>[
       "Robert Hooke",
       "Louis Pasteur",
     ],
-    "answer": 2,
+    "correctAnswerIndex": 2,
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@ final List<Question> questions = <Map<String, Object>>[
       "Le réticulum endoplasmique",
       "Le noyau",
     ],
-    "answer": 3,
+    "correctAnswerIndex": 3,
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@ final List<Question> questions = <Map<String, Object>>[
       "La paroi cellulaire",
       "La membrane plasmique",
     ],
-    "answer": 3,
+    "correctAnswerIndex": 3,
   },
   {
     "id": 5,
@@ -53,6 +53,6 @@ final List<Question> questions = <Map<String, Object>>[
       "La synthèse des protéines",
       "La photosynthèse",
     ],
-    "answer": 2,
+    "correctAnswerIndex": 2,
   },
 ].map(Question.fromMap).toList();

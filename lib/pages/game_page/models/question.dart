@@ -1,12 +1,12 @@
 class Question {
-  final String id;
+  final int id;
   final String question;
   // Options offers a list of 4 answer suggestions.
   final List<String> options;
   // The index of the correct answer with Options.
   final int correctAnswerIndex;
 
-  String getId() => id;
+  int getId() => id;
   String getQuestion() => question;
   List<String> getOptions() => options;
   int getCorrectAnswerIndex() => correctAnswerIndex;
@@ -19,7 +19,7 @@ class Question {
   });
 
   static Question fromMap(Map<String, Object> map) {
-    if (map["id"] is! String) throw Exception("Id type is wrong.");
+    if (map["id"] is! int) throw Exception("Id type is wrong.");
     if (map["question"] is! String) throw Exception("Question type is wrong.");
     if (map["correctAnswerIndex"] is! int) {
       throw Exception("CorrectAnswerIndex type is wrong.");
@@ -28,7 +28,7 @@ class Question {
       throw Exception("Option type is wrong.");
     }
     return Question(
-      id: map["id"] as String,
+      id: map["id"] as int,
       question: map["question"] as String,
       options: map["options"] as List<String>,
       correctAnswerIndex: map["correctAnswerIndex"] as int,

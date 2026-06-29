@@ -27,7 +27,7 @@ class AnswerSuggestion extends StatelessWidget {
     width: 150,
     margin: EdgeInsets.only(right: 20),
     child: Card(
-      color: calculateSuggestionBgColor(0),
+      color: calculateSuggestionBgColor(suggestionIndex),
       child: InkWell(
         onTap: () => onSuggestionPressed(suggestionIndex),
         child: Container(
