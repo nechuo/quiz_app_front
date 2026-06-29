@@ -14,5 +14,20 @@
     },
     "between_rounds_page": {
         "round_status": "Statut des manches"
+    },
+    "choose_first_player_page": {
+        "vs_label": "VS",
+        "me_label": "Moi",
+        "choose_first_player": "Choix du premier joueur",
+        "start_game": "Commencer la partie"
+    },
+    "shared": {
+        "round_names": {
+            "first_round_name": "Première Manche",
+            "second_round_name": "Seconde Manche",
+            "third_round_name": "Troisième Manche",
+            "fourth_round_name": "Quatrième Manche",
+            "fifth_round_name": "Cinquième Manche"
+        }
     }
 }

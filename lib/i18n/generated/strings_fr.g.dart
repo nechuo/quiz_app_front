@@ -44,6 +44,8 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	late final Translations$matchmaking_page$fr matchmaking_page = Translations$matchmaking_page$fr._(_root);
 	late final Translations$accept_player_page$fr accept_player_page = Translations$accept_player_page$fr._(_root);
 	late final Translations$between_rounds_page$fr between_rounds_page = Translations$between_rounds_page$fr._(_root);
+	late final Translations$choose_first_player_page$fr choose_first_player_page = Translations$choose_first_player_page$fr._(_root);
+	late final Translations$shared$fr shared = Translations$shared$fr._(_root);
 }
 
 // Path: home_page
@@ -106,6 +108,61 @@ class Translations$between_rounds_page$fr {
 	String get round_status => 'Statut des manches';
 }
 
+// Path: choose_first_player_page
+class Translations$choose_first_player_page$fr {
+	Translations$choose_first_player_page$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'VS'
+	String get vs_label => 'VS';
+
+	/// fr: 'Moi'
+	String get me_label => 'Moi';
+
+	/// fr: 'Choix du premier joueur'
+	String get choose_first_player => 'Choix du premier joueur';
+
+	/// fr: 'Commencer la partie'
+	String get start_game => 'Commencer la partie';
+}
+
+// Path: shared
+class Translations$shared$fr {
+	Translations$shared$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final Translations$shared$round_names$fr round_names = Translations$shared$round_names$fr._(_root);
+}
+
+// Path: shared.round_names
+class Translations$shared$round_names$fr {
+	Translations$shared$round_names$fr._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// fr: 'Première Manche'
+	String get first_round_name => 'Première Manche';
+
+	/// fr: 'Seconde Manche'
+	String get second_round_name => 'Seconde Manche';
+
+	/// fr: 'Troisième Manche'
+	String get third_round_name => 'Troisième Manche';
+
+	/// fr: 'Quatrième Manche'
+	String get fourth_round_name => 'Quatrième Manche';
+
+	/// fr: 'Cinquième Manche'
+	String get fifth_round_name => 'Cinquième Manche';
+}
+
 /// The flat map containing all translations for locale <fr>.
 /// Only for edge cases! For simple maps, use the map function of this library.
 ///
@@ -122,6 +179,15 @@ extension on Translations {
 			'accept_player_page.found_opponent' => 'Partie trouvée !',
 			'accept_player_page.come_back_to_home_page' => 'Revenir a l\'accueil',
 			'between_rounds_page.round_status' => 'Statut des manches',
+			'choose_first_player_page.vs_label' => 'VS',
+			'choose_first_player_page.me_label' => 'Moi',
+			'choose_first_player_page.choose_first_player' => 'Choix du premier joueur',
+			'choose_first_player_page.start_game' => 'Commencer la partie',
+			'shared.round_names.first_round_name' => 'Première Manche',
+			'shared.round_names.second_round_name' => 'Seconde Manche',
+			'shared.round_names.third_round_name' => 'Troisième Manche',
+			'shared.round_names.fourth_round_name' => 'Quatrième Manche',
+			'shared.round_names.fifth_round_name' => 'Cinquième Manche',
 			_ => null,
 		};
 	}
