@@ -1,7 +1,6 @@
 //import 'dart:async';
 
 import 'package:flutter/material.dart' hide Theme;
-import 'package:quiz_app_front/pages/game_page/assets/questions.dart';
 import 'package:quiz_app_front/pages/game_page/services/answer_bot_questions.dart';
 import 'package:quiz_app_front/pages/game_page/services/fetch_questions_service.dart';
 import 'package:quiz_app_front/pages/game_page/widgets/question_label.dart';
@@ -40,14 +39,14 @@ class GamePageState extends State<GamePage> {
   int greenAnswerIndex = -1;
 
   int currentQuestionIndex = 0;
-  List<Map<String, dynamic>> quetions = [];
+  List<Map<String, dynamic>> questions = [];
 
   Future<void> _fetchQuestions() async {
     List<Map<String, dynamic>> newQuestions = await fetchQuestionsService(
       widget.theme,
     );
     if (!mounted) return;
-    setState(() => quetions = newQuestions);
+    setState(() => questions = newQuestions);
   }
 
   @override
@@ -59,7 +58,7 @@ class GamePageState extends State<GamePage> {
   void _answerBotQuestion(int correctAnswerIndex) {
     int botSelectedAnswerIndex = answerBotQuestion(
       widget.opponent,
-      questions[currentQuestionIndex].getOptions(),
+      questions[currentQuestionIndex]["options"] as List<String>,
       widget.theme,
       correctAnswerIndex,
     );
@@ -68,8 +67,7 @@ class GamePageState extends State<GamePage> {
   }
 
   void _onSuggestionPressed(int selectedAnswerIndex) {
-    int correctAnswerIndex = questions[currentQuestionIndex]
-        .getCorrectAnswerIndex();
+    int correctAnswerIndex = questions[currentQuestionIndex]["answer"] as int;
 
     if (correctAnswerIndex == selectedAnswerIndex) {
       setState(() {
@@ -137,7 +135,8 @@ class GamePageState extends State<GamePage> {
                 children: [
                   RoundNameLabel(roundIndex: widget.roundIndex),
                   QuestionLabel(
-                    currentQuestion: questions[currentQuestionIndex],
+                    currentQuestion:
+                        questions[currentQuestionIndex]["question"] as String,
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 40),
@@ -148,8 +147,9 @@ class GamePageState extends State<GamePage> {
                           children: [
                             AnswerSuggestion(
                               suggestionIndex: 0,
-                              suggestionLabel: questions[currentQuestionIndex]
-                                  .getOptions()[0],
+                              suggestionLabel:
+                                  (questions[currentQuestionIndex]["options"]
+                                      as List<String>)[0],
                               onSuggestionPressed: _onSuggestionPressed,
                               calculateSuggestionBgColor:
                                   _calculateSuggestionBgColor,
@@ -158,8 +158,9 @@ class GamePageState extends State<GamePage> {
                             ),
                             AnswerSuggestion(
                               suggestionIndex: 1,
-                              suggestionLabel: questions[currentQuestionIndex]
-                                  .getOptions()[1],
+                              suggestionLabel:
+                                  (questions[currentQuestionIndex]["options"]
+                                      as List<String>)[1],
                               onSuggestionPressed: _onSuggestionPressed,
                               calculateSuggestionBgColor:
                                   _calculateSuggestionBgColor,
@@ -173,8 +174,9 @@ class GamePageState extends State<GamePage> {
                           children: [
                             AnswerSuggestion(
                               suggestionIndex: 2,
-                              suggestionLabel: questions[currentQuestionIndex]
-                                  .getOptions()[2],
+                              suggestionLabel:
+                                  (questions[currentQuestionIndex]["options"]
+                                      as List<String>)[2],
                               onSuggestionPressed: _onSuggestionPressed,
                               calculateSuggestionBgColor:
                                   _calculateSuggestionBgColor,
@@ -183,8 +185,9 @@ class GamePageState extends State<GamePage> {
                             ),
                             AnswerSuggestion(
                               suggestionIndex: 3,
-                              suggestionLabel: questions[currentQuestionIndex]
-                                  .getOptions()[3],
+                              suggestionLabel:
+                                  (questions[currentQuestionIndex]["options"]
+                                      as List<String>)[3],
                               onSuggestionPressed: _onSuggestionPressed,
                               calculateSuggestionBgColor:
                                   _calculateSuggestionBgColor,

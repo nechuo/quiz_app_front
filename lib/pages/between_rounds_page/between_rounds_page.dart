@@ -5,6 +5,7 @@ import 'package:quiz_app_front/pages/choose_theme_page/choose_theme_page.dart';
 import 'package:quiz_app_front/pages/end_game_page/end_game_page.dart';
 import 'package:quiz_app_front/pages/matchmaking_page/models/player.dart';
 import 'package:quiz_app_front/pages/waiting_for_theme_page/waiting_for_theme_page.dart';
+import 'package:quiz_app_front/shared_services/load_json.dart';
 
 import '../../shared_models/theme.dart';
 
@@ -64,7 +65,21 @@ class BetweenRoundsPageState extends State<BetweenRoundsPage> with RouteAware {
         });
       }
     }
+    _updateMyProfile();
     _updateOpponentProfile();
+  }
+
+  Future<void> _updateMyProfile() async {
+    final Player myProfile = await loadPlayerFromJson();
+    myProfile.addAccuracyEntryToATheme(
+      widget.theme,
+      widget.myCorrectAnswers / 5,
+    );
+    myProfile.updateAverageAccuracyPerTheme();
+    myProfile.updatePlayedThemes(widget.theme);
+    myProfile.addToTotalPlayedGames();
+    myProfile.addToTotalScore(widget.myCorrectAnswers * 10);
+    writePlayerToJson(myProfile);
   }
 
   void _updateOpponentProfile() {
@@ -74,6 +89,8 @@ class BetweenRoundsPageState extends State<BetweenRoundsPage> with RouteAware {
     );
     widget.opponent.updateAverageAccuracyPerTheme();
     widget.opponent.updatePlayedThemes(widget.theme);
+    widget.opponent.addToTotalPlayedGames();
+    widget.opponent.addToTotalScore(widget.opponentCorrectAnswers * 10);
   }
 
   bool _isNotPlayedRound(List<dynamic> winners) => winners.isEmpty;

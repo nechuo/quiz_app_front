@@ -77,4 +77,21 @@ class Player {
   void addToTotalScore(int score) => totalScore += score;
 
   void addToTotalPlayedGames() => totalPlayedGames += 1;
+
+  Map<String, dynamic> historyOfAccuracyPerGameToJson() =>
+      historyOfAccuracyPerGame.map(
+        (theme, value) => MapEntry(theme.value.name, value),
+      );
+
+  Map<String, dynamic> accuracyPerThemeToJson() =>
+      accuracyPerTheme.map((theme, value) => MapEntry(theme.value.name, value));
+
+  Map<String, dynamic> toJson() => {
+    "name": name,
+    "isBot": isBot,
+    "totalScore": totalScore,
+    "totalPlayedGames": totalPlayedGames,
+    "accuracyPerTheme": accuracyPerThemeToJson(),
+    "historyOfAccuracyPerGame": historyOfAccuracyPerGameToJson(),
+  };
 }

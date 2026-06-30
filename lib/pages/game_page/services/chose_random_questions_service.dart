@@ -1,6 +1,5 @@
 import 'package:quiz_app_front/main.dart';
 import 'package:quiz_app_front/pages/game_page/services/fetch_questions_service.dart';
-import "dart:math";
 
 import '../../../shared_models/theme.dart';
 

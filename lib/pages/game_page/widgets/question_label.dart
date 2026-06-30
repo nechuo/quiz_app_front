@@ -1,8 +1,7 @@
 import "package:flutter/material.dart";
-import "../models/question.dart";
 
 class QuestionLabel extends StatelessWidget {
-  final Question currentQuestion;
+  final String currentQuestion;
 
   const QuestionLabel({super.key, required this.currentQuestion});
 
@@ -11,7 +10,7 @@ class QuestionLabel extends StatelessWidget {
     margin: EdgeInsets.only(top: 20),
     child: Text(
       textAlign: TextAlign.center,
-      currentQuestion.getQuestion(),
+      currentQuestion,
       style: TextStyle(fontSize: 35),
     ),
   );

@@ -40,7 +40,7 @@ class AcceptPlayerPage extends StatelessWidget {
     String result = "";
     for (Theme theme in themes) {
       result +=
-          '$theme: ${(opponent.accuracyPerTheme[theme.value]! * 100).toInt()}%\n';
+          '${theme.value.name}: ${(opponent.accuracyPerTheme[theme]! * 100).toInt()}%\n';
     }
     return result;
   }
