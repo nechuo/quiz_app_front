@@ -3,13 +3,11 @@ import "package:flutter/material.dart";
 class Theme extends StatelessWidget {
   final Color themeColor;
   final String themeName;
-  final String roundName;
   final void Function() onThemePressed;
 
   const Theme({
     super.key,
     required this.themeName,
-    required this.roundName,
     required this.themeColor,
     required this.onThemePressed,
   });

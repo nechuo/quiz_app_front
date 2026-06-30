@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_front/pages/choose_theme_page/choose_theme_page.dart';
 import 'package:quiz_app_front/pages/matchmaking_page/models/player.dart';
 import 'package:quiz_app_front/pages/waiting_for_theme_page/waiting_for_theme_page.dart';
 
@@ -13,14 +14,18 @@ class CardColors {
 }
 
 class BetweenRoundsPage extends StatefulWidget {
+  final int roundIndex;
   final Player opponent;
   final int myCorrectAnswers;
   final int opponentCorrectAnswers;
+  final bool isMyTurnToChooseTheme;
 
   const BetweenRoundsPage({
     super.key,
     required this.opponent,
+    required this.roundIndex,
     required this.myCorrectAnswers,
+    required this.isMyTurnToChooseTheme,
     required this.opponentCorrectAnswers,
   });
 
@@ -83,6 +88,21 @@ class BetweenRoundsPageState extends State<BetweenRoundsPage> with RouteAware {
       return CardColors(textColor: Colors.white, bgColor: Colors.red);
     }
   }
+
+  void _onNextRoundButtonPressed(BuildContext context) => Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => widget.isMyTurnToChooseTheme
+          ? WaitingForThemePage(
+              roundIndex: widget.roundIndex + 1,
+              opponent: widget.opponent,
+            )
+          : ChooseThemePage(
+              roundIndex: widget.roundIndex + 1,
+              opponent: widget.opponent,
+            ),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -174,15 +194,7 @@ class BetweenRoundsPageState extends State<BetweenRoundsPage> with RouteAware {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            WaitingForThemePage(opponent: widget.opponent),
-                      ),
-                    ),
-                  },
+                  onPressed: () => _onNextRoundButtonPressed(context),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 137, 187, 116),
                     foregroundColor: Colors.white,

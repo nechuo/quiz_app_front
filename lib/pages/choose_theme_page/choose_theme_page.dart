@@ -12,12 +12,12 @@ import '../../shared_assets/themes.dart';
 import '../../shared_models/theme.dart';
 
 class ChooseThemePage extends StatefulWidget {
-  final String roundName;
+  final int roundIndex;
   final Player opponent;
 
   const ChooseThemePage({
     super.key,
-    required this.roundName,
+    required this.roundIndex,
     required this.opponent,
   });
 
@@ -31,9 +31,10 @@ class ChooseThemePageState extends State<ChooseThemePage> {
       context,
       MaterialPageRoute(
         builder: (context) => GamePage(
-          roundName: widget.roundName,
+          roundIndex: widget.roundIndex,
           theme: pressedTheme,
           opponent: widget.opponent,
+          isMyTurnToChooseTheme: true,
         ),
       ),
     ),
@@ -49,7 +50,6 @@ class ChooseThemePageState extends State<ChooseThemePage> {
               ChooseThemeLabel(),
               ...themes.map(
                 (theme) => listed_theme.Theme(
-                  roundName: widget.roundName,
                   themeName: t['shared.theme_names.${theme.value.name}'],
                   themeColor: theme.color,
                   onThemePressed: () => _onThemePressed(context, theme),

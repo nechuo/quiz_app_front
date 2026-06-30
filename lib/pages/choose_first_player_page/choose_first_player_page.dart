@@ -1,6 +1,5 @@
 import "dart:async";
 import 'package:flutter/material.dart';
-import 'package:quiz_app_front/i18n/generated/strings.g.dart';
 import 'package:quiz_app_front/main.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/my_card.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/vs_label.dart';
@@ -72,12 +71,12 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
       MaterialPageRoute(
         builder: (context) {
           if (firstPlayer == 1) {
-            return ChooseThemePage(
-              roundName: t.shared.round_names.first_round_name,
+            return ChooseThemePage(roundIndex: 0, opponent: widget.opponent);
+          } else {
+            return WaitingForThemePage(
+              roundIndex: 0,
               opponent: widget.opponent,
             );
-          } else {
-            return WaitingForThemePage(opponent: widget.opponent);
           }
         },
       ),

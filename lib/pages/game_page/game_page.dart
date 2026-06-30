@@ -14,14 +14,16 @@ import '../../shared_models/theme.dart';
 
 class GamePage extends StatefulWidget {
   final Theme theme;
-  final String roundName;
+  final int roundIndex;
   final Player opponent;
+  final bool isMyTurnToChooseTheme;
 
   const GamePage({
     super.key,
-    required this.roundName,
+    required this.roundIndex,
     required this.theme,
     required this.opponent,
+    required this.isMyTurnToChooseTheme,
   });
 
   @override
@@ -100,6 +102,8 @@ class GamePageState extends State<GamePage> {
             MaterialPageRoute(
               builder: (context) => BetweenRoundsPage(
                 opponent: widget.opponent,
+                isMyTurnToChooseTheme: widget.isMyTurnToChooseTheme,
+                roundIndex: widget.roundIndex,
                 myCorrectAnswers: myCorrectAnswers,
                 opponentCorrectAnswers: opponentCorrectAnswers,
               ),
@@ -130,7 +134,7 @@ class GamePageState extends State<GamePage> {
           : Center(
               child: Column(
                 children: [
-                  RoundNameLabel(roundName: widget.roundName),
+                  RoundNameLabel(roundIndex: widget.roundIndex),
                   QuestionLabel(
                     currentQuestion: questions[currentQuestionIndex],
                   ),
