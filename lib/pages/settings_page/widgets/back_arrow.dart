@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_front/pages/main_page.dart';
 
 class BackArrow extends StatelessWidget {
   const BackArrow({super.key});
@@ -14,10 +13,7 @@ class BackArrow extends StatelessWidget {
         child: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const MainPage()),
-            );
+            Navigator.pop(context);
           },
         ),
       ),

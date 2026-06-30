@@ -11,6 +11,23 @@ class SettingsPage extends StatefulWidget {
 
 class SettingsPageState extends State<SettingsPage> {
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(body: Column(children: [BackArrow(), SettingsPageLabel()]));
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 96, 71, 219),
+              Color.fromARGB(255, 100, 231, 148),
+            ],
+          ),
+        ),
+        child: Column(children: const [BackArrow(), SettingsPageLabel()]),
+      ),
+    );
+  }
 }
