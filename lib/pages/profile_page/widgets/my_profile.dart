@@ -16,7 +16,7 @@ class MyProfile extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(top: 30, bottom: 30),
           child: CircleAvatar(
-            backgroundColor: Colors.black12,
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             radius: 50,
             child: const Text("Avatar"),
           ),
