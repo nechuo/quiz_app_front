@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'pages/main_page.dart';
 import "./i18n/generated/strings.g.dart";
+import "dart:math";
+
+Random randomInstance = Random();
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

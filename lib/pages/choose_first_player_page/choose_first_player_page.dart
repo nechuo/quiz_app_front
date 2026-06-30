@@ -1,7 +1,7 @@
-import "dart:math";
 import "dart:async";
 import 'package:flutter/material.dart';
 import 'package:quiz_app_front/i18n/generated/strings.g.dart';
+import 'package:quiz_app_front/main.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/my_card.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/vs_label.dart';
 import 'package:quiz_app_front/pages/choose_first_player_page/widgets/top_icon.dart';
@@ -35,7 +35,7 @@ class ChooseFirstPlayerPageState extends State<ChooseFirstPlayerPage> {
   @override
   void initState() {
     super.initState();
-    firstPlayer = Random().nextInt(2);
+    firstPlayer = randomInstance.nextInt(2);
     int count = 0;
     int maxCount = 6 + firstPlayer;
 

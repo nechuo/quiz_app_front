@@ -1,9 +1,6 @@
+import 'package:quiz_app_front/main.dart';
 import 'package:quiz_app_front/shared_assets/themes.dart';
-
 import '../../../shared_models/theme.dart';
-import "dart:math";
-
-Random _random = Random();
 
 class Player {
   final String name;
@@ -27,6 +24,7 @@ class Player {
   int getTotalScore() => totalScore;
   bool getIsBot() => isBot;
   int getTotalPlayedGames() => totalPlayedGames;
+  Map<Theme, double> getAccuracyPerTheme() => accuracyPerTheme;
 
   void updatePlayedThemes(Theme theme) =>
       playedThemeOccurrences[theme] = (playedThemeOccurrences[theme] ?? 0) + 1;
@@ -52,11 +50,11 @@ class Player {
     List<Theme> chosenThemes = [];
     for (Theme theme in themes) {
       accuracyOnCurrentTheme = (accuracyPerTheme[theme] ?? 0);
-      if (_random.nextDouble() < accuracyOnCurrentTheme) {
+      if (randomInstance.nextDouble() < accuracyOnCurrentTheme) {
         chosenThemes.add(theme);
       }
     }
-    return chosenThemes[_random.nextInt(chosenThemes.length)];
+    return chosenThemes[randomInstance.nextInt(chosenThemes.length)];
   }
 
   void addAccuracyEntryToATheme(Theme theme, double newAccuracy) =>

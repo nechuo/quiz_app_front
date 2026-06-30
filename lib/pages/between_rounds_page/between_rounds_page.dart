@@ -14,8 +14,15 @@ class CardColors {
 
 class BetweenRoundsPage extends StatefulWidget {
   final Player opponent;
+  final int myCorrectAnswers;
+  final int opponentCorrectAnswers;
 
-  const BetweenRoundsPage({super.key, required this.opponent});
+  const BetweenRoundsPage({
+    super.key,
+    required this.opponent,
+    required this.myCorrectAnswers,
+    required this.opponentCorrectAnswers,
+  });
 
   @override
   State<StatefulWidget> createState() => BetweenRoundsPageState();

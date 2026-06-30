@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart' hide Theme;
 import 'package:quiz_app_front/pages/game_page/assets/questions.dart';
+import 'package:quiz_app_front/pages/game_page/services/answer_bot_questions.dart';
 import 'package:quiz_app_front/pages/game_page/services/fetch_questions_service.dart';
 import 'package:quiz_app_front/pages/game_page/widgets/question_label.dart';
 import 'package:quiz_app_front/pages/game_page/widgets/round_name_label.dart';
@@ -28,8 +29,14 @@ class GamePage extends StatefulWidget {
 }
 
 class GamePageState extends State<GamePage> {
+  int myCorrectAnswers = 0;
+  int opponentCorrectAnswers = 0;
+
+  // Only for my game.
+  // The opponent's game is simulated for the moment.
   int redAnswerIndex = -1;
   int greenAnswerIndex = -1;
+
   int currentQuestionIndex = 0;
   List<Map<String, dynamic>> quetions = [];
 
@@ -47,16 +54,34 @@ class GamePageState extends State<GamePage> {
     _fetchQuestions();
   }
 
-  void _onSuggestionPressed(int cardIndex) {
+  void _answerBotQuestion(int correctAnswerIndex) {
+    int botSelectedAnswerIndex = answerBotQuestion(
+      widget.opponent,
+      questions[currentQuestionIndex].getOptions(),
+      widget.theme,
+      correctAnswerIndex,
+    );
+
+    if (botSelectedAnswerIndex == correctAnswerIndex) opponentCorrectAnswers++;
+  }
+
+  void _onSuggestionPressed(int selectedAnswerIndex) {
     int correctAnswerIndex = questions[currentQuestionIndex]
         .getCorrectAnswerIndex();
-    if (correctAnswerIndex == cardIndex) {
-      setState(() => greenAnswerIndex = cardIndex);
+
+    if (correctAnswerIndex == selectedAnswerIndex) {
+      setState(() {
+        greenAnswerIndex = selectedAnswerIndex;
+        correctAnswerIndex++;
+      });
     } else {
       setState(() {
-        redAnswerIndex = cardIndex;
+        redAnswerIndex = selectedAnswerIndex;
         greenAnswerIndex = correctAnswerIndex;
       });
+
+      // Since the opponent is a bot, then simulate a selected option depending on its accuracy on the selected theme.
+      _answerBotQuestion(correctAnswerIndex);
     }
 
     // When the user presses a suggestion, then display the results (correct answer or not).
@@ -70,11 +95,14 @@ class GamePageState extends State<GamePage> {
           currentQuestionIndex++;
           questions[currentQuestionIndex];
         } else {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) =>
-                  BetweenRoundsPage(opponent: widget.opponent),
+              builder: (context) => BetweenRoundsPage(
+                opponent: widget.opponent,
+                myCorrectAnswers: myCorrectAnswers,
+                opponentCorrectAnswers: opponentCorrectAnswers,
+              ),
             ),
           );
         }
