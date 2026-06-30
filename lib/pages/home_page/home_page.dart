@@ -14,14 +14,29 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) => Scaffold(
-    appBar: const CustomAppBar(),
-
-    body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [Title(), RunGameButton()],
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.fromARGB(226, 96, 71, 219),
+            Color.fromARGB(92, 100, 231, 148),
+          ],
+        ),
       ),
-    ),
-  );
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: const CustomAppBar(),
+
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Title(), RunGameButton()],
+          ),
+        ),
+      ),
+    );
+  }
 }

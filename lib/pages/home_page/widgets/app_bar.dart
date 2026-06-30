@@ -6,10 +6,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: const Color.fromARGB(48, 255, 255, 255),
       title: const Text(
         'Qwize (Quiz culture générale)',
         style: TextStyle(fontSize: 22),
       ),
+      automaticallyImplyLeading: false,
     );
   }
 
